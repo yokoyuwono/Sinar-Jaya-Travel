@@ -17,7 +17,7 @@ export const TrustStrip: React.FC = () => {
           {trusts.map((t, i) => (
             <div key={i} className="flex flex-col items-center justify-center space-y-2 group cursor-default">
               <div className="p-3 bg-white/10 rounded-full group-hover:bg-tosca-accent group-hover:text-tosca-dark transition-colors duration-300">
-                {React.cloneElement(t.icon as React.ReactElement, { className: "w-8 h-8" })}
+                {React.cloneElement(t.icon as React.ReactElement<{ className?: string }>, { className: "w-8 h-8" })}
               </div>
               <span className="font-bold text-sm md:text-base tracking-wide">{t.text}</span>
             </div>

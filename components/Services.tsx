@@ -7,21 +7,21 @@ const Services: React.FC = () => {
     {
       title: "TIKET KAPAL LAUT",
       icon: <Ship className="w-16 h-16 text-tosca" />,
-      image: "/ferry.webp",
+      image: "https://github.com/yokoyuwono/Sinar-Jaya-Travel/blob/main/ferry.webp?raw=true",
       desc: "Pelni & Swasta Seluruh Indonesia",
       items: ["Semua Jurusan", "Cetak Tiket Langsung", "Harga Resmi"]
     },
     {
       title: "TIKET PESAWAT",
       icon: <Plane className="w-16 h-16 text-tosca" />,
-      image: "/pesawat.webp",
+      image: "https://github.com/yokoyuwono/Sinar-Jaya-Travel/blob/main/pesawat.webp?raw=true",
       desc: "Domestik & Internasional",
       items: ["Semua Maskapai", "Booking Cepat", "Harga Bersaing"]
     },
     {
       title: "TRAVEL & CARTER",
       icon: <Car className="w-16 h-16 text-tosca" />,
-      image: "/mobil.webp",
+      image: "https://github.com/yokoyuwono/Sinar-Jaya-Travel/blob/main/mobil.webp?raw=true",
       desc: "Blitar - Malang - Surabaya - Juanda",
       items: ["Reguler (Perorangan)", "Carter Drop / PP", "Titipan Kilat (Paket)"]
     }

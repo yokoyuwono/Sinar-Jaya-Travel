@@ -23,45 +23,45 @@ export const Card: React.FC<{ children: React.ReactNode; className?: string }> =
   </div>
 );
 
-export const WhatsAppButton: React.FC<{ 
-  text?: string; 
-  size?: 'sm' | 'md' | 'lg' | 'xl'; 
+export const WhatsAppButton: React.FC<{
+  text?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   fullWidth?: boolean;
   message?: string;
   variant?: 'primary' | 'outline' | 'white';
-}> = ({ 
-  text = "Chat WhatsApp", 
-  size = 'md', 
+}> = ({
+  text = "Chat WhatsApp",
+  size = 'md',
   fullWidth = false,
-  message = "Halo Sinar Jaya Travel, saya mau tanya...",
+  message = "Halo Admin, saya mau tanya ketersediaan Tiket Mudik Lebaran untuk rute [Sebutkan Rute]",
   variant = 'primary'
 }) => {
-  const baseClasses = "inline-flex items-center justify-center font-bold rounded-full transition-all duration-300 shadow-md hover:shadow-xl active:scale-95";
-  
-  const sizeClasses = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-base",
-    lg: "px-8 py-4 text-lg",
-    xl: "px-10 py-5 text-xl"
+    const baseClasses = "inline-flex items-center justify-center font-bold rounded-full transition-all duration-300 shadow-md hover:shadow-xl active:scale-95";
+
+    const sizeClasses = {
+      sm: "px-4 py-2 text-sm",
+      md: "px-6 py-3 text-base",
+      lg: "px-8 py-4 text-lg",
+      xl: "px-10 py-5 text-xl"
+    };
+
+    const variantClasses = {
+      primary: "bg-green-500 hover:bg-green-600 text-white border-2 border-transparent",
+      outline: "bg-transparent border-2 border-green-500 text-green-600 hover:bg-green-50",
+      white: "bg-white text-green-600 hover:bg-gray-100 border-2 border-transparent"
+    };
+
+    const url = `https://wa.me/6285784846494?text=${encodeURIComponent(message)}`;
+
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${fullWidth ? 'w-full' : ''}`}
+      >
+        <MessageCircle className="mr-2 w-5 h-5 md:w-6 md:h-6" />
+        {text}
+      </a>
+    );
   };
-
-  const variantClasses = {
-    primary: "bg-green-500 hover:bg-green-600 text-white border-2 border-transparent",
-    outline: "bg-transparent border-2 border-green-500 text-green-600 hover:bg-green-50",
-    white: "bg-white text-green-600 hover:bg-gray-100 border-2 border-transparent"
-  };
-
-  const url = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
-
-  return (
-    <a 
-      href={url} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${fullWidth ? 'w-full' : ''}`}
-    >
-      <MessageCircle className="mr-2 w-5 h-5 md:w-6 md:h-6" />
-      {text}
-    </a>
-  );
-};

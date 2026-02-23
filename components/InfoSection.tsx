@@ -59,9 +59,9 @@ export const Schedule: React.FC = () => {
 
 export const Fleet: React.FC = () => {
   const cars = [
-    { name: "New Avanza", img: "https://photos.app.goo.gl/EPKfbKEKEUhsm7426" },
-    { name: "New Xenia", img: "https://photos.google.com/photo/AF1QipOnnXFo8EKjJvg7PWFc3lN7CTzm6lNun0t3gPAJ" },
-    { name: "Toyota Hiace", img: "https://photos.google.com/photo/AF1QipPrv6MVP_z08V-QRkSbbn-uX8TPqq6xDnirkfMa" }
+    { name: "New Avanza", img: "https://github.com/yokoyuwono/Sinar-Jaya-Travel/blob/main/avanza.webp?raw=true" },
+    { name: "New Xenia", img: "https://github.com/yokoyuwono/Sinar-Jaya-Travel/blob/main/xenia.webp?raw=true" },
+    { name: "Toyota Hiace", img: "https://github.com/yokoyuwono/Sinar-Jaya-Travel/blob/main/hiace.webp?raw=true" }
   ];
 
   return (

@@ -14,14 +14,14 @@ const Services: React.FC = () => {
     {
       title: "TIKET PESAWAT",
       icon: <Plane className="w-16 h-16 text-tosca" />,
-      image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop",
+      image: "/pesawat.webp",
       desc: "Domestik & Internasional",
       items: ["Semua Maskapai", "Booking Cepat", "Harga Bersaing"]
     },
     {
       title: "TRAVEL & CARTER",
       icon: <Car className="w-16 h-16 text-tosca" />,
-      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=600&auto=format&fit=crop",
+      image: "/mobil.webp",
       desc: "Blitar - Malang - Surabaya - Juanda",
       items: ["Reguler (Perorangan)", "Carter Drop / PP", "Titipan Kilat (Paket)"]
     }

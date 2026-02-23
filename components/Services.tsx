@@ -7,7 +7,7 @@ const Services: React.FC = () => {
     {
       title: "TIKET KAPAL LAUT",
       icon: <Ship className="w-16 h-16 text-tosca" />,
-      image: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=600&auto=format&fit=crop",
+      image: "/ferry.webp",
       desc: "Pelni & Swasta Seluruh Indonesia",
       items: ["Semua Jurusan", "Cetak Tiket Langsung", "Harga Resmi"]
     },

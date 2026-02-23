@@ -105,8 +105,8 @@ const Footer = () => (
         <div>
           <h4 className="font-bold text-lg mb-4 text-tosca-accent">KONTAK KAMI</h4>
           <div className="flex items-start gap-3 mb-2 text-gray-300">
-            <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
-            <span>Jl. Raya Wlingi No. 123, Blitar, Jawa Timur</span>
+            {/* <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
+            <span>Jl. Raya Wlingi No. 123, Blitar, Jawa Timur</span> */}
           </div>
           <div className="flex items-center gap-3 text-gray-300">
             <Phone className="w-5 h-5 flex-shrink-0" />

@@ -1,60 +1,56 @@
 import React from 'react';
-import { SectionTitle, Card } from './UI';
-import { Clock, Star, MapPin, Home, ArrowRight, Car } from './Icons';
+import { SectionTitle, Card, WhatsAppButton } from './UI';
+import { Clock } from './Icons';
 
 export const Schedule: React.FC = () => {
-  const times = [
-    { label: "PAGI", icon: "🌅" },
-    { label: "SIANG", icon: "☀️" },
-    { label: "SORE", icon: "🌤️" },
-    { label: "MALAM", icon: "🌙" }
+  const departureTimes = ["04.00", "07.00", "10.00", "23.00"];
+
+  const schedules = [
+    {
+      route: "BLITAR - SURABAYA (PP)",
+      description: "Rute via Tol Panjang, antar jemput sampai tujuan.",
+      message: "Halo Sinar Jaya Travel, saya mau cek ketersediaan kursi untuk rute Blitar - Surabaya..."
+    }
   ];
 
-  const facilities = ["Full AC Dingin", "Lewat Tol", "Reclining Seat", "Musik & Audio", "Charger HP"];
-
   return (
-    <section className="py-16 bg-tosca/5 relative overflow-hidden">
+    <section id="jadwal" className="py-16 bg-tosca/5 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row gap-8 items-stretch">
-          
-          {/* Schedule */}
-          <div className="w-full md:w-1/2">
-             <div className="bg-white p-8 rounded-3xl shadow-lg border-t-8 border-tosca h-full">
-                <h3 className="text-2xl font-extrabold text-tosca-dark mb-6 flex items-center">
-                  <Clock className="mr-3 w-8 h-8" /> JAM KEBERANGKATAN
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {times.map((t, i) => (
-                    <div key={i} className="bg-gray-50 rounded-xl p-4 text-center border hover:border-tosca hover:bg-tosca/10 transition-colors">
-                      <div className="text-4xl mb-2">{t.icon}</div>
-                      <div className="font-bold text-gray-700">{t.label}</div>
+        <SectionTitle title="JADWAL KEBERANGKATAN" subtitle="Pilih waktu yang sesuai dengan kebutuhan Anda" />
+
+        <div className="max-w-xl mx-auto">
+          {schedules.map((item, idx) => (
+            <Card key={idx} className="flex flex-col h-full">
+              <div className="bg-tosca-dark p-6 text-white">
+                <div className="flex items-center gap-3 mb-2">
+                  <Clock className="w-6 h-6 text-tosca-accent" />
+                  <h3 className="text-xl font-bold tracking-tight">{item.route}</h3>
+                </div>
+                <p className="text-tosca-light text-sm opacity-90">{item.description}</p>
+              </div>
+
+              <div className="p-8 flex-grow">
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {departureTimes.map((time, i) => (
+                    <div key={i} className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-tosca hover:bg-tosca/10 transition-colors group">
+                      <div className="text-xs font-bold text-gray-400 mb-1 group-hover:text-tosca-dark transition-colors uppercase">Keberangkatan</div>
+                      <div className="text-2xl font-black text-tosca-dark">{time}</div>
                     </div>
                   ))}
                 </div>
-                <p className="mt-4 text-sm text-gray-500 text-center italic">*Jam operasional menyesuaikan kondisi lapangan</p>
-             </div>
-          </div>
 
-          {/* Facilities */}
-          <div className="w-full md:w-1/2">
-             <div className="bg-tosca-dark text-white p-8 rounded-3xl shadow-lg h-full flex flex-col justify-center relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-20 bg-white/5 rounded-full -mr-10 -mt-10 blur-2xl"></div>
-                <h3 className="text-2xl font-extrabold mb-6 flex items-center relative z-10">
-                  <Star className="mr-3 w-8 h-8 text-tosca-accent" /> FASILITAS PREMIUM
-                </h3>
-                <ul className="space-y-4 relative z-10">
-                  {facilities.map((f, i) => (
-                    <li key={i} className="flex items-center text-lg font-medium">
-                      <div className="bg-tosca-accent text-tosca-dark rounded-full p-1 mr-4">
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-             </div>
-          </div>
-
+                <WhatsAppButton
+                  text="Cek Kursi Sekarang"
+                  fullWidth
+                  variant="primary"
+                  message={item.message}
+                />
+                <p className="mt-4 text-[10px] text-gray-400 text-center italic">
+                  *Jam operasional dapat berubah sesuai kondisi di lapangan.
+                </p>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
@@ -63,9 +59,9 @@ export const Schedule: React.FC = () => {
 
 export const Fleet: React.FC = () => {
   const cars = [
-    { name: "All New Avanza", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/2022_Toyota_Avanza_1.5_G_W101RE_%2820220306%29.jpg/640px-2022_Toyota_Avanza_1.5_G_W101RE_%2820220306%29.jpg" },
-    { name: "Daihatsu Xenia", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/2019_Daihatsu_Xenia_1.3_R_F653RV_%2820200223%29.jpg/640px-2019_Daihatsu_Xenia_1.3_R_F653RV_%2820200223%29.jpg" },
-    { name: "Toyota Hiace", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/2019_Toyota_HiAce_Premio_2.8_GDH322_%2820220827%29.jpg/640px-2019_Toyota_HiAce_Premio_2.8_GDH322_%2820220827%29.jpg" }
+    { name: "New Avanza", img: "https://photos.app.goo.gl/EPKfbKEKEUhsm7426" },
+    { name: "New Xenia", img: "https://photos.google.com/photo/AF1QipOnnXFo8EKjJvg7PWFc3lN7CTzm6lNun0t3gPAJ" },
+    { name: "Toyota Hiace", img: "https://photos.google.com/photo/AF1QipPrv6MVP_z08V-QRkSbbn-uX8TPqq6xDnirkfMa" }
   ];
 
   return (
@@ -90,29 +86,3 @@ export const Fleet: React.FC = () => {
   );
 };
 
-export const PickupUSP: React.FC = () => {
-  return (
-    <section className="py-20 bg-tosca text-white text-center px-4 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-      <div className="container mx-auto relative z-10">
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 md:p-12 rounded-3xl max-w-4xl mx-auto">
-          <Home className="w-20 h-20 mx-auto mb-6 text-tosca-accent animate-bounce" />
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-            TIDAK PERLU KE POOL/TERMINAL!
-          </h2>
-          <p className="text-xl md:text-2xl font-medium mb-8">
-            Kami jemput di depan pintu rumah Anda dan antar sampai ke tujuan dengan selamat.
-          </p>
-          
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-tosca-dark font-bold text-lg md:text-xl bg-white/90 p-6 rounded-xl shadow-xl">
-             <div className="flex items-center"><Home className="w-6 h-6 mr-2 text-tosca" /> Rumah</div>
-             <ArrowRight className="text-gray-400 rotate-90 md:rotate-0" />
-             <div className="flex items-center"><Car className="w-6 h-6 mr-2 text-tosca" /> Perjalanan Nyaman</div>
-             <ArrowRight className="text-gray-400 rotate-90 md:rotate-0" />
-             <div className="flex items-center"><MapPin className="w-6 h-6 mr-2 text-tosca" /> Tujuan</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};

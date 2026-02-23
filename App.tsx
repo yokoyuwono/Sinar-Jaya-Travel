@@ -3,8 +3,8 @@ import { Menu, X, Phone, MapPin } from './components/Icons';
 import { WhatsAppButton } from './components/UI';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import { TrustStrip, PopularRoutes } from './components/Features';
-import { Schedule, Fleet, PickupUSP } from './components/InfoSection';
+import { WhyChooseUs, PopularRoutes } from './components/Features';
+import { Schedule, Fleet } from './components/InfoSection';
 import { BookingSteps, Testimonials } from './components/Booking';
 
 // Floating WhatsApp Component
@@ -45,9 +45,9 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6 items-center">
           {navLinks.map(link => (
-            <a 
-              key={link.name} 
-              href={link.href} 
+            <a
+              key={link.name}
+              href={link.href}
               className={`font-bold hover:text-tosca-accent transition ${scrolled ? 'text-gray-700' : 'text-white'}`}
             >
               {link.name}
@@ -57,8 +57,8 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
-          className={`md:hidden ${scrolled ? 'text-tosca-dark' : 'text-white'}`} 
+        <button
+          className={`md:hidden ${scrolled ? 'text-tosca-dark' : 'text-white'}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
@@ -68,9 +68,9 @@ const Navbar = () => {
         {isOpen && (
           <div className="absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 flex flex-col p-6 gap-4 md:hidden animate-fade-in-down">
             {navLinks.map(link => (
-              <a 
-                key={link.name} 
-                href={link.href} 
+              <a
+                key={link.name}
+                href={link.href}
                 className="text-lg font-bold text-gray-800 border-b border-gray-100 pb-2"
                 onClick={() => setIsOpen(false)}
               >
@@ -105,12 +105,12 @@ const Footer = () => (
         <div>
           <h4 className="font-bold text-lg mb-4 text-tosca-accent">KONTAK KAMI</h4>
           <div className="flex items-start gap-3 mb-2 text-gray-300">
-             <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
-             <span>Jl. Raya Wlingi No. 123, Blitar, Jawa Timur</span>
+            <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
+            <span>Jl. Raya Wlingi No. 123, Blitar, Jawa Timur</span>
           </div>
           <div className="flex items-center gap-3 text-gray-300">
-             <Phone className="w-5 h-5 flex-shrink-0" />
-             <span>0812-3456-7890</span>
+            <Phone className="w-5 h-5 flex-shrink-0" />
+            <span>0812-3456-7890</span>
           </div>
         </div>
         <div>
@@ -123,7 +123,7 @@ const Footer = () => (
           </ul>
         </div>
       </div>
-      
+
       <div className="text-center text-sm text-gray-400 mt-12 pt-8 border-t border-white/10">
         &copy; {new Date().getFullYear()} Sinar Jaya Travel Wlingi. All Rights Reserved.
       </div>
@@ -136,9 +136,9 @@ const App: React.FC = () => {
     <div className="font-sans text-gray-800 antialiased overflow-x-hidden selection:bg-tosca selection:text-white">
       <Navbar />
       <Hero />
-      <TrustStrip />
+      <WhyChooseUs />
       <Services />
-      
+
       {/* Popular Routes with ID for anchor */}
       <div id="rute">
         <PopularRoutes />
@@ -146,7 +146,6 @@ const App: React.FC = () => {
 
       <Schedule />
       <Fleet />
-      <PickupUSP />
       <BookingSteps />
       <Testimonials />
       <Footer />
